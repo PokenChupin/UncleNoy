@@ -6,28 +6,60 @@ namespace PersonClass
     {
         static void Main(string[] args)
         {
-            Person jr = new Person("Celso","Guido");
-            jr.birthdate = new Date(11,29,2000);
+            Person person = new Person("Celso","Guido");
+            //person.birthdate = new Date(11,29,2000);
 
-            Console.WriteLine(jr.fName);
-            Console.WriteLine(jr.lName);
-            jr.birthdate.displayDate();
+            Console.WriteLine(person.FirstName);
+            Console.WriteLine(person.LastName);
+            /*person.birthdate.displayDate();*/
         }
     }
 
     public class Person
     {
-        public string fName;
+
+        private string firstName;
+
+	public string FirstName
+	{
+		get { return firstName;}
+		set { firstName = value;}
+	}
+        private string lastName;
+
+	public string LastName
+	{
+		get { return lastName;}
+		set { lastName = value;}
+	}
+
+      /*  private Date dateOfBirth;
+
+	public Date DateOfBirth
+	{
+		get { return dateOfBirth;}
+		set { dateOfBirth = value;}
+	}
+
+
+
+        /*public string fName;
         public string lName;
-        public Date birthdate;
-        public Person(string fName, string lName)
+        public Date birthdate;*/
+ 
+
+        public Person(){
+            
+        }
+
+        public Person(string firstName, string lastName)
         {
-            this.fName = fName;
-            this.lName = lName;
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }  
     }
 
-    public class Date
+   /* public class Date
     {
         public int month;
         public int day;
@@ -44,5 +76,5 @@ namespace PersonClass
         {
             Console.WriteLine(month +"/"+day+"/"+year);
         }
-    }
+    }*/
 }
